@@ -8,6 +8,10 @@ elif [ $1 == "on" ]; then
     # echo "turning bulb on"
     kasa --type bulb --host $HOST on 2>&1 >/dev/null
     exit 0
+elif [ $1 == "warm" ]; then
+    kasa --type bulb --host $HOST temperature 2500 2>&1 >/dev/null
+elif [ $1 == "cool" ]; then
+    kasa --type bulb --host $HOST temperature 5000 2>&1 >/dev/null
 else
     while true
     do
